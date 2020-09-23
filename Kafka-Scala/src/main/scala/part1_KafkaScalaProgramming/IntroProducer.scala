@@ -1,12 +1,14 @@
 package part1_KafkaScalaProgramming
 
 import java.util.Properties
+
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.kafka.common.serialization.StringSerializer
+import org.slf4j.{Logger, LoggerFactory}
 
 object IntroProducer extends App{
   val bootstrapServer = "127.0.0.1:9092"
-
+  val logger = LoggerFactory.getLogger(IntroProducer.getClass)
   //Create properties
   val kafkaProducerProps: Properties = {
     val props = new Properties()
