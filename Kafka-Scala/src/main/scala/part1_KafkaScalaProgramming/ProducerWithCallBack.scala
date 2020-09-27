@@ -39,5 +39,9 @@ object ProducerWithCallBack extends App{
 
   }
 
+  (1 to 10).map{ recordData =>
+    recordData = new ProducerRecord[String, String]("quickstart-events","Hello kafka from scala")
+  }
+
   producer.close()
 }
